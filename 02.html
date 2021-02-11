@@ -12,14 +12,16 @@
     <script>
       $(document).ready(function () {
         console.log(".ready -> " + "width = " + $("#target").width());
-      });
+      }); // width: 0
 
       window.onload = function () {
         console.log("window.onload -> " + "width = " + $("#target").width());
-      };
+      }; // width: real width
     </script>
   </head>
   <body>
     <img id="target" src="shark.jpg" alt="SHARK" />
   </body>
 </html>
+
+<!-- recent reviewed: 21/02/11 -->

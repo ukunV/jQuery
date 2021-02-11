@@ -31,8 +31,10 @@
       // 예제 05 each() 메서드에서 this 값 확인하기
 
       $(document).ready(function () {
-        $("ul.menu li").each(function (index) {
+        $("ul.menu li").each(function (index, item) {
           console.log(this);
+          console.log(item);
+          console.log("----------------------------");
         });
       });
 
@@ -68,3 +70,5 @@
     </div>
   </body>
 </html>
+
+<!-- recent reviewed: 21/02/11 -->

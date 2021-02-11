@@ -28,13 +28,15 @@
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
     ></script>
     <script>
-      //  예제 02: #samplePage의 바로 하위 자식 노드 중 test1 클래스가 적용된 노드를 찾아
-      //  border를 4px solid #f00으로 변경해 주세요.
+      //  예제 02: #samplePage의 바로 하위 자식 노드 중 test1 클래스가
+      //  적용된 노드를 찾아 border를 "4px solid #f00"으로 변경해 주세요.
 
       $(document).ready(function () {
         $("#samplePage").children(".test1").css("border", "4px solid #f00");
         console.log($("#samplePage").children(".test1"));
       });
+      //  children(): 바로 다음 하위 자식 노드를 찾는다.
+      //  find(): 모든 자손 노드에서 찾는다
     </script>
   </head>
 
@@ -44,7 +46,7 @@
       <div id="header" class="test1">
         헤더 영역(div, id=header, class=test1)
       </div>
-      <div id="content" class="sample-content">
+      <div id="content" class="sample-content test1">
         노드 찾기(div, id=content, class=sample-content)
         <ul class="menu">
           일반 노드 찾기(ul, class=menu)
@@ -64,3 +66,5 @@
     </div>
   </body>
 </html>
+
+<!-- recent reviewed: 21/02/11 -->

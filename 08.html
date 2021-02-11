@@ -28,12 +28,12 @@
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
     ></script>
     <script>
-      // 예제 03: 풀 이 전 코드의 $liList 변수에 들어있는 jQuery 객체 내부의 HTMLLiElement DOM 객체 중 두 번째에
-      // 접근해서 DOM 객체의 기능을 사용해 border를 “4px solid #f00”으로 변경하세요.
+      //  예제 03: 풀이전 코드의 $liList 변수에 들어있는 jQuery 객체 내부의 HTMLLiElement DOM 객체 중
+      //  두 번째에 접근해서 DOM 객체의 기능을 사용해 border를 “4px solid #f00”으로 변경하세요.
 
       $(document).ready(function () {
         var $liList = $("ul.menu li");
-        var li_1 = $liList.get(1); // li_1: javascript DOM object
+        var li_1 = $liList.get(1); // li_1: javascript DOM object에 직접 접근(get())
         li_1.style.border = "4px solid #f00";
       });
     </script>
@@ -63,3 +63,5 @@
     </div>
   </body>
 </html>
+
+<!-- recent reviewed: 21/02/11 -->
