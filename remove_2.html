@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> </title>
+    <style>
+      body {
+        font-size: 9pt;
+        font-family: "굴림";
+      }
+      div,
+      p,
+      ul,
+      li {
+        border: 1px #eeeeee solid;
+        margin: 10px;
+      }
+      ul {
+        padding: 10px;
+      }
+      li.select {
+        background-color: #ccc;
+      }
+    </style>
+
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("#remove").click(function () {
+          // 버튼을 클릭하면 인덱스 값이 짝수(even)인 노드 삭제
+          $(".menu li:even").remove();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <button id="remove">삭제</button>
+    <ul class="menu">
+      <li>menu0</li>
+      <li>menu1</li>
+      <li class="select">menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+      <li>menu5</li>
+    </ul>
+  </body>
+</html>
