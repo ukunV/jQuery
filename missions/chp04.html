@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <style>
+      body {
+        font-size: 9pt;
+        font-family: "굴림";
+      }
+      div,
+      ul,
+      li {
+      }
+      .menu {
+        padding: 10px;
+        list-style: none;
+        border: 1px #000 solid;
+      }
+      .menu li {
+        border: 1px #eeeeee solid;
+        margin: 10px;
+      }
+
+      #select {
+        background-color: gray;
+      }
+    </style>
+
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
+    ></script>
+    <script>
+      let $menu = null;
+      let $input_id = null;
+      let $select = null;
+      $(document).ready(function () {
+        init();
+        initEvent();
+      });
+
+      const init = () => {
+        $menu = $(".menu");
+        $input_id = $("#input_id");
+      };
+
+      const initEvent = () => {
+        $("#add").click(() => addMenu());
+
+        $menu.on("click", "li", function () {
+          setSelect($(this));
+        });
+
+        $("#update").click(() => updateMenu());
+
+        $("#remove").click(() => removeMenu());
+
+        $("#up").click(() => upMenu());
+        $("#down").click(() => downMenu());
+      };
+
+      const addMenu = () => {
+        $menu.append(`<li>${$input_id.val()}</li>`);
+        $input_id.val("");
+      };
+
+      const setSelect = ($item) => {
+        if ($select != null) {
+          $select.removeAttr("id");
+        }
+        $select = $item;
+        $select.attr("id", "select");
+      };
+
+      const updateMenu = () => {
+        if ($select) {
+          const temp = $input_id.val();
+          $select.text(temp);
+        } else {
+          alert("메뉴를 선택하세요");
+        }
+      };
+
+      const removeMenu = () => {
+        if ($select) {
+          $select.remove();
+          $select = null;
+        } else {
+          alert("메뉴를 선택하세요");
+        }
+      };
+
+      const upMenu = () => {
+        if ($select) {
+          const $prev = $select.prev();
+          if ($prev) {
+            $select.insertBefore($prev);
+          } else {
+            alert("메뉴를 선택하세요");
+          }
+        }
+      };
+
+      const downMenu = () => {
+        if ($select) {
+          const $next = $select.next();
+          if ($next) {
+            $select.insertAfter($next);
+          } else {
+            alert("메뉴를 선택하세요");
+          }
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <input type="text" id="input_id" />
+      <button id="add">추가</button>
+      <button id="update">수정</button>
+      <button id="remove">삭제</button>
+      <button id="up">UP</button>
+      <button id="down">DOWN</button>
+    </div>
+    <ul class="menu"></ul>
+  </body>
+</html>
