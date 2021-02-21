@@ -28,12 +28,12 @@
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
     ></script>
     <script>
-      //  예제 01: ul.menu 노드의 부모 노드를 찾아 border 속성을
-      //  “4px solid #f00”으로 변경해 주세요.
+      //  예제 02: ul.menu 노드의 조상 노드 중 page 클래스가 적용된 노드를 찾아
+      //  border 속성을 “4px solid# f00”으로 변경해 주세요.
 
       $(document).ready(function () {
         var $menu = $(".menu");
-        $menu.parent().css("border", "4px solid #f00");
+        $menu.parents(".page").css("border", "4px solid #f00");
       });
     </script>
   </head>
@@ -64,3 +64,4 @@
 </html>
 
 <!-- recent reviewed: 21/02/11 -->
+<!-- recent reviewed: 21/02/21 -->

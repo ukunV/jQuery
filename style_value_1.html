@@ -5,7 +5,7 @@
     <title> </title>
     <style>
       body {
-        font-size: 9pt;
+        font-size: 9px;
         font-family: "굴림";
       }
 
@@ -20,7 +20,7 @@
         font-size: 1rem;
       }
 
-      li.select {
+      .select {
         background-color: #ccc;
       }
     </style>
@@ -36,13 +36,14 @@
       $(document).ready(function () {
         // 메뉴 아이템의 폰트 사이즈 정보 출력(px 단위로 출력)
         console.log("font-size=", $(".menu li").css("font-size"));
+        // 첫 번째 .menu li의 font-size 출력
       });
     </script>
   </head>
 
   <body>
     <ul class="menu">
-      <li>menu1</li>
+      <li style="font-size: 2rem">menu1</li>
       <li>menu2</li>
       <li class="select">menu3</li>
       <li>menu4</li>
@@ -50,3 +51,5 @@
     </ul>
   </body>
 </html>
+
+<!-- recent reviewed: 21/02/21 -->

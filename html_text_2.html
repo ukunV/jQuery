@@ -35,9 +35,14 @@
         $(".menu li").click(function () {
           var $item = $(this);
           $item.html(
-            `<a href='http://www.webdongne.com'>new menu${
-              1 + $item.index()
-            }</li>`
+            `
+              <a href='http://www.webdongne.com'>new menu${1 + $item.index()}
+            `
+            // $item.text(
+            // `
+            //   <a href='http://www.webdongne.com'>new menu${1 + $item.index()}
+            // `
+            // ==> html형식으로 들어가지 않고 text 그대로 들어간다.
           );
         });
       });
@@ -55,3 +60,5 @@
     </ul>
   </body>
 </html>
+
+<!-- recent reviewed: 21/02/21 -->

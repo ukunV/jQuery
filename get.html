@@ -32,8 +32,9 @@
       //  두 번째에 접근해서 DOM 객체의 기능을 사용해 border를 “4px solid #f00”으로 변경하세요.
 
       $(document).ready(function () {
-        var $liList = $("ul.menu li");
-        var li_1 = $liList.get(1); // li_1: javascript DOM object에 직접 접근(get())
+        var $liList = $(".menu li");
+        var li_1 = $liList.get(1);
+        // li_1: get()으로 javascript DOM object에 직접 접근
         console.log(li_1);
         li_1.style.border = "4px solid #f00";
       });
@@ -66,3 +67,4 @@
 </html>
 
 <!-- recent reviewed: 21/02/13 -->
+<!-- recent reviewed: 21/02/21 -->
